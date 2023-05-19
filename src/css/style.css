@@ -1,0 +1,284 @@
+body{
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    cursor: default;
+    min-height: 100vh;
+    
+}
+
+video{
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cartao{
+    width: 370px;
+    border: 2px solid Rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+}
+
+.cartao::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    box-shadow: rgba(255, 255, 255, 0.35) -30px -30px 36px -28px inset,rgba(255, 255, 255, 0.35) 30px 30px 36px -28px inset;
+    z-index: -1;
+}
+
+.cartao .minhas-informacoes{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.cartao .minhas-informacoes img{
+    border: 3px solid #bb0e22;
+    border-radius: 50%;
+    width: 96px;
+}
+
+.cartao .minhas-informacoes .nome{
+    font-size: 26px;
+}
+
+.cartao .minhas-informacoes .cargo{
+    font-size: 20px;
+    color: #b8bbc5;
+}
+
+.cartao .conteudo{
+    margin-top: 15px;
+}
+
+.cartao .conteudo .abas{
+    display: flex;
+}
+
+.cartao .conteudo .abas .aba{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    padding: 10px  0;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+.cartao .conteudo .abas .aba:hover{
+    background-color: #ffffff27;
+}
+
+.cartao .conteudo .abas .aba.selecionado{
+    background-color: #ffffff18;
+}
+
+.cartao .conteudo .abas .aba img{
+    width: 30px;
+}
+
+.cartao .informacoes-abas{
+    background-color: #ffffff18;
+    height: 275px;  
+}
+
+.cartao .informacoes-abas .informacao{
+    transition:.6s ease-in-out;
+    height: 0;
+    opacity: 0;
+    display:flex;
+    flex-direction: column;
+}
+
+.cartao .informacoes-abas .informacao.selecionado{
+    opacity: 1;
+    height: 260px;
+    padding: 15px ;
+}
+
+.cartao .informacoes-abas .sub-titulo{
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.cartao .informacoes-abas .descricao{
+    font-size: 22px;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.cartao .informacoes-abas .descricao span{
+    color: #a50f34;
+    font-weight: bold;
+}
+
+
+.cartao .informacoes-abas .projetos,
+.cartao .informacoes-abas .habilidades,
+.cartao .informacoes-abas .redes-sociais{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    max-height: 180px;
+    overflow-y: auto;
+}
+.cartao .informacoes-abas .projetos li a,
+.cartao .informacoes-abas .habilidades li p,
+.cartao .informacoes-abas .redes-sociais li a{
+    display: block;
+    width: 250px;
+    color: #f3f3f3;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    transition:  .3s ease-in-out;
+    border-radius: 5px;
+}
+
+.cartao .informacoes-abas .habilidades li p{
+    border-radius: 10px;
+    position: relative;
+    padding: 10px ;
+}
+
+.cartao .informacoes-abas .habilidades .visual-studio-code{
+    background-color: #0360ac;
+}
+
+.cartao .informacoes-abas .habilidades .html{
+    background-color: #f06529;
+}
+
+.cartao .informacoes-abas .habilidades .css{
+    background-color: #264de4;
+}
+
+.cartao .informacoes-abas .habilidades .javascript{
+    background-color: #f0db4f;
+}
+
+.cartao .informacoes-abas .habilidades .mais{
+    text-align: center;
+    padding: 10px;
+    background-color: #bb0e22;
+    animation: pisca .7s infinite alternate ease-in-out;
+}
+
+.cartao .informacoes-abas .habilidades li p.visual-studio-code::before{
+    background-image: url(../img/logo-vs-code.png);    
+}
+
+.cartao .informacoes-abas .habilidades li p.html::before{
+    background-image: url(../img/logo-hmtl.png);  
+   
+}
+
+.cartao .informacoes-abas .habilidades li p.css::before{
+    background-image: url(../img/logo-css.png);    
+}
+
+.cartao .informacoes-abas .habilidades li p.javascript::before{
+    background-image: url(../img/logo-js.png);    
+}
+
+.cartao .informacoes-abas .habilidades li p.github::before{
+    background-image: url(../img/logo-github.png);    
+}
+
+@-webkit-keyframes pisca {
+    0%{opacity: .3;}
+    100%{opacity: .9;}
+}
+
+.cartao .informacoes-abas .projetos li a{
+    border: 2px solid Rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.35) -30px -30px 36px -28px inset,rgba(255, 255, 255, 0.35) 30px 30px 36px -28px inset;    
+    position: relative;
+    text-align: start;
+    padding: 10px 0 10px 40px;
+}
+
+.cartao .informacoes-abas .habilidades li p::before,
+.cartao .informacoes-abas .projetos li a::before{
+    content: '';
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 4%;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+.cartao .informacoes-abas .habilidades li p::before{
+    right: 10px;
+    top: 7px;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+}
+
+.cartao .informacoes-abas .projetos li a.carrossel-pokemon::before{
+    background-image: url(../img/pokebola.png);    
+}
+
+.cartao .informacoes-abas .projetos li a.selecao::before{
+    background-image: url(../img/selecao.png);    
+}
+
+.cartao .informacoes-abas .projetos li a.pokedex::before{
+    background-image: url(../img/pokedex.png);    
+}
+
+.cartao .informacoes-abas .projetos li a.the-last-of-us::before{
+    background-image: url(../img/the-last-of-us.png); 
+    width: 35px;  
+    height: 35px;
+    top: 5%;
+    left: 2%; 
+}
+
+.cartao .informacoes-abas .projetos li a.agencia::before{
+    background-image: url(../img/agencia.png);    
+}
+
+.cartao .informacoes-abas .projetos li a:hover{
+    opacity: .4;
+    transform: scale(1.1);
+}
+
+.cartao .informacoes-abas .redes-sociais li a:hover{
+    opacity: .7;
+}
+
+.cartao .informacoes-abas .projetos li a.carrossel-pokemon{
+    margin-top: 5px;
+}
+
+.cartao .informacoes-abas .redes-sociais .curriculo{
+    background-color: #06c185;
+}
+
+.cartao .informacoes-abas .redes-sociais .linkedin{
+    background-color: #1d87bd;
+}
+.cartao .informacoes-abas .habilidades .github,
+.cartao .informacoes-abas .redes-sociais .github{
+    background-color: #545454;
+}
