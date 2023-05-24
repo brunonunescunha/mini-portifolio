@@ -258,6 +258,10 @@ video{
     background-image: url(../img/agencia.png);    
 }
 
+.cartao .informacoes-abas .projetos li a.dota2::before{
+    background-image: url(../img/logo-dota2.png);    
+}
+
 .cartao .informacoes-abas .projetos li a:hover{
     opacity: .4;
     transform: scale(1.1);
